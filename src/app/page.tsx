@@ -4,6 +4,7 @@ import { HeroBgIcon } from "@/app/lib/icons/HeroBgIcon";
 import HorizontalScrollLoop from "@/app/lib/icons/HorizontalScrollLoop";
 import { ScrollDownIcon } from "@/app/lib/icons/ScrollDownIcon";
 import { MyWorks } from "@/app/MyWorks";
+import { Testimonials } from "@/app/Testimonials";
 import { useRef } from "react";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
 
       <HorizontalScrollLoop />
       <MyWorks ref={galleryRef} />
+      <Testimonials />
     </main>
   );
 }

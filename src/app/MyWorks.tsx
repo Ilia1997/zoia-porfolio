@@ -1,5 +1,6 @@
 "use client";
 import { Container } from "@/app/lib/icons/components/Container";
+import { H2 } from "@/app/lib/icons/components/H2";
 import { Ref } from "react";
 import ReactCompareImage from "react-compare-image";
 
@@ -20,10 +21,9 @@ export const MyWorks = ({ ref }: { ref: Ref<HTMLElement> | undefined }) => {
   return (
     <section className="mt-60 py-20" id="gallery" ref={ref}>
       <Container>
-        <h2 className="text-4xl font-semibold text-center text-gray-800">
-          My Works
-        </h2>
-        <div className="grid md:grid-cols-2 gap-3 mt-6">
+        <H2>Портфоліо</H2>
+
+        <div className="grid md:grid-cols-2 gap-3 mt-10">
           <ReactCompareImage
             leftImage={Img_1_before}
             rightImage={Img_1_after}
