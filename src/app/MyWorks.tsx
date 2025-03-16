@@ -52,7 +52,7 @@ export const MyWorks = ({ ref }: { ref: Ref<HTMLElement> | undefined }) => {
         </div>
         <div className="flex justify-center">
           <button className="mt-40 text-sm w-auto justify-center items-center uppercase transition-all hover:underline underline-offset-2 cursor-pointer rounded-full border border-gray-700 py-2 px-7">
-            <p>Send a message</p>
+            <p>Звʼязатись</p>
           </button>
         </div>
       </Container>

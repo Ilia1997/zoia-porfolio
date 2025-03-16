@@ -1,4 +1,5 @@
 "use client";
+import { Footer } from "@/app/Footer";
 import Header from "@/app/Header";
 import { HeroBgIcon } from "@/app/lib/icons/HeroBgIcon";
 import HorizontalScrollLoop from "@/app/lib/icons/HorizontalScrollLoop";
@@ -29,6 +30,7 @@ export default function Home() {
       <HorizontalScrollLoop />
       <MyWorks ref={galleryRef} />
       <Testimonials />
+      <Footer />
     </main>
   );
 }
