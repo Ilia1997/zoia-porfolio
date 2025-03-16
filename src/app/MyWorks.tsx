@@ -18,7 +18,7 @@ const Img_6_after = "/gallery/gallery_img_6_after.jpg";
 
 export const MyWorks = ({ ref }: { ref: Ref<HTMLElement> | undefined }) => {
   return (
-    <section className="mt-60 px-4" id="gallery" ref={ref}>
+    <section className="mt-60 py-20" id="gallery" ref={ref}>
       <Container>
         <h2 className="text-4xl font-semibold text-center text-gray-800">
           My Works
@@ -49,6 +49,11 @@ export const MyWorks = ({ ref }: { ref: Ref<HTMLElement> | undefined }) => {
             leftImage={Img_4_before}
             rightImage={Img_4_after}
           />
+        </div>
+        <div className="flex justify-center">
+          <button className="mt-40 text-sm w-auto justify-center items-center uppercase transition-all hover:underline underline-offset-2 cursor-pointer rounded-full border border-gray-700 py-2 px-7">
+            <p>Send a message</p>
+          </button>
         </div>
       </Container>
     </section>
