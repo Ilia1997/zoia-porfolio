@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 
-const Img_1 = "/loop-scroll-images/image_1.webp";
-const Img_2 = "/loop-scroll-images/image_2.webp";
-const Img_3 = "/loop-scroll-images/image_3.webp";
-const Img_4 = "/loop-scroll-images/image_4.webp";
-const Img_5 = "/loop-scroll-images/image_5.webp";
-const Img_6 = "/loop-scroll-images/image_6.webp";
+const Img_1 = "/loop-scroll-images/1.webp";
+const Img_2 = "/loop-scroll-images/2.webp";
+const Img_3 = "/loop-scroll-images/3.webp";
+const Img_4 = "/loop-scroll-images/4.webp";
+const Img_5 = "/loop-scroll-images/5.webp";
+const Img_6 = "/loop-scroll-images/6.webp";
 
 const HorizontalScrollLoop = () => {
   // Replace these URLs with your actual images
