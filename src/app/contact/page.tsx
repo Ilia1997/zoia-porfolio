@@ -3,6 +3,7 @@ import { sendEmail } from "@/app/contact/actions";
 import { Footer } from "@/app/Footer";
 import Header from "@/app/Header";
 import { Container } from "@/app/lib/icons/components/Container";
+import { SocialLinks } from "@/app/lib/icons/components/SocialLinks";
 import { useActionState } from "react";
 
 export default function Contact() {
@@ -15,10 +16,10 @@ export default function Contact() {
         <Container>
           {!state ? (
             <div className="2xl:px-30 lg:px-10 md:px-5 px-0">
-              <h2 className="text-4xl md:text-5xl font-base text-left sm:mb-10 mb-5">
+              <h2 className="text-4xl md:text-5xl font-base text-left sm:mb-8 mb-5">
                 Звʼяжіться зі мною &#128075;
               </h2>
-              <div className="mb-10">
+              <div className="sm:mb-8 mb-5">
                 <p className="mb-2">
                   Якщо у вас є запитання чи пропозиції щодо співпраці – залиште
                   повідомлення.
@@ -26,9 +27,10 @@ export default function Contact() {
                 <p className="mb-2">
                   Я із задоволенням відповім на всі ваші питання.
                 </p>
-                <p>
+                <p className="mb-4">
                   Чекаю на ваше звернення та сподіваюся на плідну співпрацю!
                 </p>
+                <SocialLinks />
               </div>
               <form className="grid md:grid-cols-2 gap-5" action={handleSubmit}>
                 <div>
