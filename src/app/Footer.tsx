@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <section className="bg-white mt-10">
+    <section className="bg-white mt-10 w-full">
       <Container>
         <div className="border-t border-gray-300 py-4 flex justify-between items-start md:flex-row flex-col w-full gap-4">
           <p className="text-gray-500 text-left w-[125px] text-xs md:block hidden">

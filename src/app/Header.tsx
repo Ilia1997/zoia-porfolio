@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className="w-full">
       <div className="w-full p-6">
         <div className="flex md:justify-center justify-between md:items-center items-start w-full">
           <div className="flex flex-col gap-8 items-center justify-center">
@@ -26,7 +26,7 @@ const Header = () => {
             <nav className="hidden md:flex items-center justify-center gap-5">
               <Link href="/">
                 <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
-                  Portfolio
+                  Home
                 </span>
               </Link>
               <span className="w-[3px] h-[3px] bg-black rounded-full"></span>
@@ -93,7 +93,7 @@ const Header = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 mt-16">
           <Link href="/">
             <span className="block text-gray-700 hover:bg-gray-100 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-base font-medium">
-              Portfolio
+              Home
             </span>
           </Link>
           <Link href="/about">
