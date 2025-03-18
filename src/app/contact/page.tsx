@@ -73,12 +73,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {state?.error ? (
-                  <div className="text-red-700 my-5">{state?.error}</div>
-                ) : (
-                  ""
-                )}
-
                 <button
                   type="submit"
                   className={`bg-black text-white p-3 w-full md:col-span-2 cursor-pointer hover:bg-gray-700 transition-all ${
