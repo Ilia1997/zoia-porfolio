@@ -13,7 +13,7 @@ export const Footer = () => {
             <nav className="flex items-center justify-center gap-4">
               <Link href="/">
                 <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
-                  Portfolio
+                  Home
                 </span>
               </Link>
               <span className="w-[3px] h-[3px] bg-black rounded-full"></span>
