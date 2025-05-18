@@ -10,7 +10,7 @@ export const CategoryImagesGrid = ({
   categoryItems: CategoryImagesItem[];
 }) => {
   return (
-    <div className="grid md:grid-cols-2 gap-3 mt-10">
+    <div className="grid md:grid-cols-2 gap-3 mt-8 md:mt-14">
       {categoryItems.map((item) => (
         <div
           key={item._id}
