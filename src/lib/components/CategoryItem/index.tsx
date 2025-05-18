@@ -17,10 +17,8 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
         </div>
       </div>
       <SanityImage
-        asset={category.mainImage.asset}
-        alt={category.title}
+        category={category}
         className={"w-full h-full max-h-[100lvh]"}
-        priority={true}
       />
     </Link>
   );

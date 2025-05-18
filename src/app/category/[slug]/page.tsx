@@ -4,13 +4,9 @@ import { Container } from "@/lib/components/Container";
 import { Footer } from "@/lib/components/Footer";
 import { H2 } from "@/lib/components/H2";
 import Header from "@/lib/components/Header";
-import { Params } from "next/dist/server/request/params";
+import { PageProps } from "../../../../.next/types/app/page";
 
-export default async function CategoryItemPage({
-  params,
-}: Readonly<{
-  params: Params;
-}>) {
+export default async function CategoryItemPage({ params }: PageProps) {
   const { slug } = await params;
 
   if (!slug) {
