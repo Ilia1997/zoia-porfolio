@@ -36,6 +36,7 @@ const ImageSlider = ({ item }: { item: CategoryImagesItem }) => {
       rightImage={imageAfter}
       leftImageCss={{ height: "100%" }}
       rightImageCss={{ height: "100%" }}
+      skeleton={<div className="h-full w-full bg-gray-200 animate-pulse" />}
     />
   );
 };
