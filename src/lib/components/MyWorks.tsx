@@ -14,7 +14,7 @@ export const MyWorks = ({
   categories: CategoryItem[];
 }) => {
   return (
-    <section className="mt-60 py-20" id="gallery" ref={ref}>
+    <section className="mt-10 md:mt-50 py-20" id="gallery" ref={ref}>
       <Container>
         <H2>Portfolio</H2>
 
@@ -22,31 +22,6 @@ export const MyWorks = ({
           {categories.map((category) => (
             <CategoryImageItem key={category._id} category={category} />
           ))}
-          {/* <ReactCompareImage
-            leftImage={Img_1_before}
-            rightImage={Img_1_after}
-          />
-          <ReactCompareImage
-            leftImage={Img_3_before}
-            rightImage={Img_3_after}
-          />
-          <ReactCompareImage
-            leftImage={Img_5_before}
-            rightImage={Img_5_after}
-          />
-
-          <ReactCompareImage
-            leftImage={Img_2_before}
-            rightImage={Img_2_after}
-          />
-          <ReactCompareImage
-            leftImage={Img_6_before}
-            rightImage={Img_6_after}
-          />
-          <ReactCompareImage
-            leftImage={Img_4_before}
-            rightImage={Img_4_after}
-          /> */}
         </div>
         <div className="flex justify-center">
           <Link

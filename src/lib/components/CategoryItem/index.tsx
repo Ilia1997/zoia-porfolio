@@ -18,7 +18,7 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
       </div>
       <SanityImage
         category={category}
-        className={"w-full h-full max-h-[100lvh]"}
+        className={"w-full h-full max-h-[100lvh] object-cover"}
       />
     </Link>
   );

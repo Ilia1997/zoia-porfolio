@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,34 +15,45 @@ const Header = () => {
       <div className="w-full p-6">
         <div className="flex md:justify-center justify-between md:items-center items-start w-full">
           <div className="flex flex-col gap-8 items-center justify-center">
-            <div className="flex-shrink-0">
-              <h1 className="md:text-6xl text-4xl font-medium text-gray-900 mb-2">
-                Zoia Lu
-              </h1>
-              <p className="md:text-2xl text-xl text-gray-900 font-light md:text-center">
-                Retoucher
-              </p>
-            </div>
-
-            <nav className="hidden md:flex items-center justify-center gap-5">
-              <Link href="/">
-                <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
-                  Home
-                </span>
-              </Link>
-              <span className="w-[3px] h-[3px] bg-black rounded-full"></span>
-              <Link href="/about">
-                <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
-                  About
-                </span>
-              </Link>
-              <span className="w-[3px] h-[3px] bg-black rounded-full"></span>
-              <Link href="/contact">
-                <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
-                  Contact
-                </span>
-              </Link>
-            </nav>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0 }}
+            >
+              <div className="flex-shrink-0">
+                <h1 className="md:text-6xl text-4xl font-medium text-gray-900 mb-2">
+                  Zoia Lu
+                </h1>
+                <p className="md:text-2xl text-xl text-gray-900 font-light md:text-center">
+                  Retoucher
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+            >
+              <nav className="hidden md:flex items-center justify-center gap-5">
+                <Link href="/">
+                  <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
+                    Home
+                  </span>
+                </Link>
+                <span className="w-[3px] h-[3px] bg-black rounded-full"></span>
+                <Link href="/about">
+                  <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
+                    About
+                  </span>
+                </Link>
+                <span className="w-[3px] h-[3px] bg-black rounded-full"></span>
+                <Link href="/contact">
+                  <span className="text-gray-700 hover:text-gray-400 transition-all px-3 py-2 rounded-md text-xs font-medium">
+                    Contact
+                  </span>
+                </Link>
+              </nav>
+            </motion.div>
           </div>
           <div className="flex items-center md:hidden">
             <button
