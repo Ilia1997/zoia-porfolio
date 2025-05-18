@@ -16,14 +16,14 @@ export function HomePage({ categories }) {
     <main className="relative z-10 text-gray-700">
       <Header />
 
-      <div className="absolute overflow-hidden w-full h-[100vh] top-0 left-0">
+      <div className="absolute overflow-hidden w-full h-[100vh] top-0 left-0 -z-1">
         <HeroBgIcon className="absolute top-0 left-1/2 -z-1 -translate-x-1/2 text-gray-500 max-w-[60%] min-w-[85%] lg:min-w-[1250px] h-auto" />
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
       >
         <button
           className="flex gap-2 text-sm w-full justify-center items-center mt-12 uppercase transition-all hover:underline underline-offset-2 cursor-pointer"
@@ -40,7 +40,7 @@ export function HomePage({ categories }) {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
       >
         <HorizontalScrollLoop />
       </motion.div>
