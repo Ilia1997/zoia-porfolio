@@ -15,13 +15,11 @@ export function HomePage({ categories }) {
   return (
     <main className="relative z-10 text-gray-700">
       <Header />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.15, delay: 0 }}
-      >
-        <HeroBgIcon className="absolute top-0 left-1/2 -z-1 -translate-x-1/2 text-gray-500 max-w-[60%] h-auto" />
-      </motion.div>
+
+      <div className="absolute overflow-hidden w-full h-[100vh] top-0 left-0">
+        <HeroBgIcon className="absolute top-0 left-1/2 -z-1 -translate-x-1/2 text-gray-500 max-w-[60%] min-w-[85%] lg:min-w-[1250px] h-auto" />
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

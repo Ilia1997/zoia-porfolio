@@ -14,7 +14,7 @@ export const MyWorks = ({
   categories: CategoryItem[];
 }) => {
   return (
-    <section className="mt-10 md:mt-50 py-20" id="gallery" ref={ref}>
+    <section className="mt-10 md:mt-40 py-20" id="gallery" ref={ref}>
       <Container>
         <H2>Portfolio</H2>
 
