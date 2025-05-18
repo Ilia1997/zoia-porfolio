@@ -7,14 +7,14 @@ const Img_2 = "/loop-scroll-images/2.jpg";
 const Img_3 = "/loop-scroll-images/3.jpg";
 const Img_4 = "/loop-scroll-images/4.jpg";
 const Img_5 = "/loop-scroll-images/5.jpg";
-const Img_6 = "/loop-scroll-images/6.jpg";
+const Img_6 = "/loop-scroll-images/6.webp";
 
 const HorizontalScrollLoop = () => {
   // Replace these URLs with your actual images
   const images = [Img_1, Img_2, Img_3, Img_4, Img_5, Img_6];
 
   // Duplicate images for seamless looping
-  const duplicatedImages = [...images, ...images];
+  const duplicatedImages = [...images, ...images, ...images];
 
   return (
     <div className="overflow-hidden mt-6">

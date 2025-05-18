@@ -1,5 +1,5 @@
-import { Container } from "@/app/lib/icons/components/Container";
-import { SocialLinks } from "@/app/lib/icons/components/SocialLinks";
+import { Container } from "@/lib/components/Container";
+import { SocialLinks } from "@/lib/components/SocialLinks";
 import Link from "next/link";
 
 export const Footer = () => {

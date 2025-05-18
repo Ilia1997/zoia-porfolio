@@ -1,6 +1,6 @@
-import { Footer } from "@/app/Footer";
-import Header from "@/app/Header";
-import { Container } from "@/app/lib/icons/components/Container";
+import { Footer } from "@/lib/components/Footer";
+import Header from "@/lib/components/Header";
+import { Container } from "@/lib/components/Container";
 import Image from "next/image";
 
 export default function About() {

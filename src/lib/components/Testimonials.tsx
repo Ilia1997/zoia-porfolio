@@ -1,5 +1,5 @@
-import { Container } from "@/app/lib/icons/components/Container";
-import { H2 } from "@/app/lib/icons/components/H2";
+import { Container } from "@/lib/components/Container";
+import { H2 } from "@/lib/components/H2";
 
 export const Testimonials = () => {
   const testimonials = [

@@ -1,9 +1,9 @@
 "use client";
 import { sendEmail } from "@/app/contact/actions";
-import { Footer } from "@/app/Footer";
-import Header from "@/app/Header";
-import { Container } from "@/app/lib/icons/components/Container";
-import { SocialLinks } from "@/app/lib/icons/components/SocialLinks";
+import { Footer } from "@/lib/components/Footer";
+import Header from "@/lib/components/Header";
+import { Container } from "@/lib/components/Container";
+import { SocialLinks } from "@/lib/components/SocialLinks";
 import { useActionState } from "react";
 
 export default function Contact() {
