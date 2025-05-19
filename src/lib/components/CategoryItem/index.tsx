@@ -22,6 +22,19 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
       }}
       onMouseEnter={() => {
         router.prefetch(`/category/${category.slug.current}`);
+        if (window?.innerWidth > 991) {
+          return;
+        }
+        setClickedState(true);
+      }}
+      onMouseLeave={() => {
+        if (window?.innerWidth > 991) {
+          return;
+        }
+        setClickedState(false);
+      }}
+      onTouchStart={() => {
+        setClickedState(true);
       }}
       className="relative group w-full h-full overflow-hidden cursor-pointer"
     >

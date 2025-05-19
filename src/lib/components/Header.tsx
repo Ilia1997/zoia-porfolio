@@ -58,7 +58,7 @@ const Header = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-700 hover:text-gray-400 transition-all z-20 cursor-pointer"
+              className="text-gray-700 hover:text-gray-400 transition-all z-30 cursor-pointer"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
@@ -98,7 +98,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 z-20 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
