@@ -15,7 +15,7 @@ export const CategoryImagesGrid = ({
         <div
           key={item._id}
           className={cn(
-            "relative min-h-[100lvh] category-item-image-slider",
+            "relative md:min-h-[100lvh] min-h-[600px] category-item-image-slider",
             item.isWidescreen ? "col-span-full" : ""
           )}
         >
