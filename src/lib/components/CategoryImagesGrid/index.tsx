@@ -2,6 +2,7 @@
 import { cn } from "@/lib/components/utils";
 import { urlFor } from "@/sanity/client";
 import { CategoryImagesItem } from "@/types";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 
 export const CategoryImagesGrid = ({
@@ -29,9 +30,39 @@ export const CategoryImagesGrid = ({
 const ImageSlider = ({ item }: { item: CategoryImagesItem }) => {
   const imageBefore = urlFor(item.beforeImage).width(4500).url();
   const imageAfter = urlFor(item.afterImage).width(4500).url();
+  const [isChanging, setIsChanging] = useState(false);
+
+  const sliderPositionChangingTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const blockScroll = useCallback(() => {
+    if (window?.innerWidth > 991) {
+      return;
+    }
+    document.body.style.overflow = "hidden";
+    setIsChanging(true);
+  }, []);
+
+  const unblockScroll = useCallback(() => {
+    document.body.style.overflow = "auto";
+    setIsChanging(false);
+  }, []);
+
+  useEffect(() => {
+    if (!isChanging) {
+      return;
+    }
+    sliderPositionChangingTimerRef.current = setTimeout(() => {
+      unblockScroll();
+    }, 500);
+    return () => {
+      if (sliderPositionChangingTimerRef.current)
+        clearTimeout(sliderPositionChangingTimerRef.current);
+    };
+  }, [isChanging, unblockScroll]);
 
   return (
     <ReactCompareImage
+      onSliderPositionChange={blockScroll}
       leftImage={imageBefore}
       rightImage={imageAfter}
       leftImageCss={{ height: "100%" }}
