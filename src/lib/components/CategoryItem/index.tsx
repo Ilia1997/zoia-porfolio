@@ -12,21 +12,28 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
     <button
       type="button"
       onClick={async () => {
+        if (window?.innerWidth > 991) {
+          router.push(`/category/${category.slug.current}`, {});
+          return;
+        }
         setClickedState(true);
-        await new Promise((resolve) => setTimeout(resolve, 250));
+        await new Promise((resolve) => setTimeout(resolve, 300));
         router.push(`/category/${category.slug.current}`, {});
+      }}
+      onMouseEnter={() => {
+        router.prefetch(`/category/${category.slug.current}`);
       }}
       className="relative group w-full h-full overflow-hidden cursor-pointer"
     >
       <div
         className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+          "absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none",
           clickedState && "opacity-100"
         )}
       >
         <div
           className={cn(
-            "absolute opacity-0 z-[2] bg-gray-900 group-hover:opacity-60 transition-opacity duration-300 w-full h-full",
+            "absolute opacity-0 z-[2] bg-gray-900 group-hover:opacity-60 transition-opacity duration-500 w-full h-full",
             clickedState && "opacity-60"
           )}
         ></div>
@@ -38,7 +45,10 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
       </div>
       <SanityImage
         category={category}
-        className={"w-full h-full max-h-[100lvh] object-cover"}
+        className={cn(
+          "w-full h-full max-h-[100lvh] object-cover group-hover:scale-105 transition-transform duration-500",
+          clickedState && "scale-105"
+        )}
       />
     </button>
   );
