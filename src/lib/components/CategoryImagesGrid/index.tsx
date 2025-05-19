@@ -11,7 +11,7 @@ export const CategoryImagesGrid = ({
 }) => {
   return (
     <>
-      <div className="md:grid-cols-2 gap-3 mt-8 md:mt-14">
+      <div className="grid md:grid-cols-2 gap-3 mt-8 md:mt-14">
         {categoryItems.map((item) => (
           <div
             key={item._id}
@@ -24,20 +24,6 @@ export const CategoryImagesGrid = ({
           </div>
         ))}
       </div>
-      {/* <div className="gap-3 mt-8 md:mt-14 flex flex-wrap lg:hidden">
-        {categoryItems.map((item) => (
-          <Fragment key={item._id}>
-            <CategoryImageItem
-              sanityImageUrl={item.beforeImage}
-              title="image-1"
-            />
-            <CategoryImageItem
-              sanityImageUrl={item.afterImage}
-              title="image-2"
-            />
-          </Fragment>
-        ))}
-      </div> */}
     </>
   );
 };
