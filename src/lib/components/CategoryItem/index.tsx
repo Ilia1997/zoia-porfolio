@@ -1,16 +1,22 @@
 import { SanityImage } from "@/lib/components/SanityImage";
 import { cn } from "@/lib/components/utils";
 import { CategoryItem } from "@/types";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
   const [clickedState, setClickedState] = useState(false);
+  const router = useRouter();
 
   return (
-    <a
-      href={`/category/${category.slug.current}`}
-      onClick={() => setClickedState(true)}
-      className="relative group w-full h-full overflow-hidden"
+    <button
+      type="button"
+      onClick={async () => {
+        setClickedState(true);
+        await new Promise((resolve) => setTimeout(resolve, 250));
+        router.push(`/category/${category.slug.current}`, {});
+      }}
+      className="relative group w-full h-full overflow-hidden cursor-pointer"
     >
       <div
         className={cn(
@@ -34,6 +40,6 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
         category={category}
         className={"w-full h-full max-h-[100lvh] object-cover"}
       />
-    </a>
+    </button>
   );
 };
