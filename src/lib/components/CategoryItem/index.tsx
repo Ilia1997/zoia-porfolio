@@ -1,10 +1,9 @@
 import { SanityImage } from "@/lib/components/SanityImage";
 import { CategoryItem } from "@/types";
-import Link from "next/link";
 
 export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
   return (
-    <Link
+    <a
       href={`/category/${category.slug.current}`}
       className="relative group w-full h-full overflow-hidden"
     >
@@ -20,6 +19,6 @@ export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
         category={category}
         className={"w-full h-full max-h-[100lvh] object-cover"}
       />
-    </Link>
+    </a>
   );
 };
