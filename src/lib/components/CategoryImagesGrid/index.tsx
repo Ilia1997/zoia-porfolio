@@ -62,7 +62,7 @@ const ImageSlider = ({ item }: { item: CategoryImagesItem }) => {
 
   return (
     <ReactCompareImage
-      onSliderPositionChange={blockScroll}
+      // onSliderPositionChange={blockScroll}
       leftImage={imageBefore}
       rightImage={imageAfter}
       leftImageCss={{ height: "100%" }}
