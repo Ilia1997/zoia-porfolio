@@ -12,7 +12,7 @@ export const SanityImage = ({
   const imageUrl = urlFor(category.mainImage).width(4500).url();
 
   return (
-    <figure>
+    <figure className="pointer-events-none">
       <Image
         placeholder="blur"
         src={imageUrl}

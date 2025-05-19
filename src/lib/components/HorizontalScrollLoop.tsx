@@ -27,6 +27,7 @@ const HorizontalScrollLoop = () => {
               className="w-[250px] h-[490px] object-cover"
               width={250}
               height={490}
+              priority
             />
           </div>
         ))}
