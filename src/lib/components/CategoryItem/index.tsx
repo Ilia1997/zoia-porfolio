@@ -2,40 +2,44 @@ import { SanityImage } from "@/lib/components/SanityImage";
 import { cn } from "@/lib/components/utils";
 import { CategoryItem } from "@/types";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 export const CategoryImageItem = ({ category }: { category: CategoryItem }) => {
   const [clickedState, setClickedState] = useState(false);
+  const isLinkClicked = useRef(false);
+
+  const onTouchEnd = useCallback(() => {
+    if (clickedState && !isLinkClicked.current) {
+      setClickedState(false);
+    }
+  }, [clickedState, isLinkClicked]);
+
   const router = useRouter();
 
   return (
     <button
       type="button"
-      onClick={async () => {
+      onMouseDown={async () => {
         if (window?.innerWidth > 991) {
           router.push(`/category/${category.slug.current}`, {});
           return;
         }
-        setClickedState(true);
+        isLinkClicked.current = true;
+        console.log(" onMouseDown isLinkClicked", isLinkClicked);
+
+        if (!clickedState) {
+          setClickedState(true);
+        }
         await new Promise((resolve) => setTimeout(resolve, 300));
         router.push(`/category/${category.slug.current}`, {});
       }}
       onMouseEnter={() => {
         router.prefetch(`/category/${category.slug.current}`);
-        if (window?.innerWidth > 991) {
-          return;
-        }
-        setClickedState(true);
-      }}
-      onMouseLeave={() => {
-        if (window?.innerWidth > 991) {
-          return;
-        }
-        setClickedState(false);
       }}
       onTouchStart={() => {
         setClickedState(true);
       }}
+      onTouchEnd={onTouchEnd}
       className="relative group w-full h-full overflow-hidden cursor-pointer"
     >
       <div
