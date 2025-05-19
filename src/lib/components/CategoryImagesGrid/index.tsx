@@ -70,7 +70,7 @@ const CategoryImageItem = ({
   sanityImageUrl: { _type: string; asset: { _ref: string; _type: string } };
   title: string;
 }) => {
-  const imageUrl = urlFor(sanityImageUrl).width(4500).url();
+  const imageUrl = urlFor(sanityImageUrl).width(2500).url();
   return (
     <div className="relative w-full">
       <Image
@@ -79,8 +79,8 @@ const CategoryImageItem = ({
         blurDataURL={urlFor(sanityImageUrl).width(10).url()}
         alt={title}
         priority={true}
-        width={3500}
-        height={3500}
+        width={2500}
+        height={2500}
       />
     </div>
   );
