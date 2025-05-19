@@ -16,7 +16,7 @@ export function HomePage({ categories }) {
     <main className="relative z-10 text-gray-700">
       <Header />
 
-      <div className="absolute overflow-hidden w-full h-[100vh] top-0 left-0 -z-1">
+      <div className="absolute overflow-hidden w-full h-[120vh] top-0 left-0 -z-1">
         <HeroBgIcon className="absolute top-0 left-1/2 -z-1 -translate-x-1/2 text-gray-500 max-w-[60%] min-w-[85%] lg:min-w-[1250px] h-auto" />
       </div>
 
