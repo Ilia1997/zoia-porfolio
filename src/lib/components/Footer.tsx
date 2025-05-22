@@ -34,7 +34,7 @@ export const Footer = () => {
           </div>
           <p className="text-gray-500 md:text-left text-center md:w-[125px] w-full text-xs">
             <span className="md:hidden">© 2025 </span>
-            Всі права захищені.{" "}
+            Всі права захищені
             <span className="w-full h-px bg-gray-200 my-0.5 md:block hidden"></span>
             Розроблено з ❤️
           </p>

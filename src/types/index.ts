@@ -13,6 +13,8 @@ export interface CategoryImagesItem {
   slug: { _type: string; current: string };
   title: string;
   isWidescreen: boolean;
+  isTwoImages: boolean;
+  imageAuthorText: string;
   categories: {
     _id: string;
     title: string;

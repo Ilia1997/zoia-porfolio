@@ -55,5 +55,5 @@ p {
   animation: scroll 15s linear infinite;
 }
 .category-item-image-slider > div {
-  height: 100% !important;
+  min-height: calc(100% - 21.5px) !important;
 }

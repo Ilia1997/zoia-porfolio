@@ -16,7 +16,7 @@ export const getCategoryItemsBySlug = async (
 ): Promise<CategoryImagesItem[]> => {
   const QUERY = `*[
   _type == "imageItem" &&   category->slug.current == "${slug}"
-]|order(order asc)[0...12]{_id, title, slug, publishedAt, beforeImage, afterImage, order, isWidescreen}`;
+]|order(order asc)[0...12]{_id, title, slug, publishedAt, beforeImage, afterImage, order, isWidescreen, isTwoImages, imageAuthorText}`;
 
   const categoryItems = await client.fetch<CategoryImagesItem[]>(QUERY, {
     slug,

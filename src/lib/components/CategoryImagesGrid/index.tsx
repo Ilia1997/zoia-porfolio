@@ -2,6 +2,7 @@
 import { cn } from "@/lib/components/utils";
 import { urlFor } from "@/sanity/client";
 import { CategoryImagesItem } from "@/types";
+import Image from "next/image";
 import ReactCompareImage from "react-compare-image";
 
 export const CategoryImagesGrid = ({
@@ -9,29 +10,91 @@ export const CategoryImagesGrid = ({
 }: {
   categoryItems: CategoryImagesItem[];
 }) => {
+  console.log("🚀 ~ categoryItems:", categoryItems);
   return (
     <>
-      <div className="grid md:grid-cols-2 gap-3 mt-8 md:mt-14">
+      <div className="grid md:grid-cols-2 auto-rows-min gap-3 mt-8 md:mt-14">
         {categoryItems.map((item) => (
-          <div
-            key={item._id}
-            className={cn(
-              "relative md:min-h-[100lvh] min-h-[600px] category-item-image-slider",
-              item.isWidescreen ? "col-span-full" : ""
-            )}
-          >
-            <ImageSlider item={item} />
-          </div>
+          <CategoryImageItem item={item} key={item._id} />
         ))}
       </div>
     </>
   );
 };
 
-const ImageSlider = ({ item }: { item: CategoryImagesItem }) => {
+const CategoryImageItem = ({ item }: { item: CategoryImagesItem }) => {
   const imageBefore = urlFor(item.beforeImage).width(4500).url();
   const imageAfter = urlFor(item.afterImage).width(4500).url();
 
+  if (item.isTwoImages) {
+    return (
+      <>
+        <div
+          className={cn(
+            "relative md:min-h-[100lvh] category-item-image-slider"
+          )}
+        >
+          <Image
+            placeholder="blur"
+            src={imageBefore}
+            blurDataURL={urlFor(item.beforeImage).width(10).url()}
+            alt={item.title}
+            className="h-full w-full object-cover"
+            priority={true}
+            width={4500}
+            height={4500}
+          />
+          {item.imageAuthorText && (
+            <span className="mt-2 text-gray-500 text-xs">
+              {item.imageAuthorText}
+            </span>
+          )}
+        </div>
+        <div
+          className={cn(
+            "relative md:min-h-[100lvh] category-item-image-slider",
+            "min-h-[600px]"
+          )}
+        >
+          <Image
+            placeholder="blur"
+            src={imageAfter}
+            className="h-full w-full object-cover"
+            blurDataURL={urlFor(item.beforeImage).width(10).url()}
+            alt={item.title}
+            priority={true}
+            width={4500}
+            height={4500}
+          />
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <div
+      className={cn(
+        "relative md:min-h-[100lvh] category-item-image-slider",
+        item.isWidescreen ? "col-span-full" : "min-h-[600px]"
+      )}
+    >
+      <ImageSlider imageBefore={imageBefore} imageAfter={imageAfter} />
+      {item.imageAuthorText && (
+        <span className="mt-2 text-gray-500 text-xs">
+          {item.imageAuthorText}
+        </span>
+      )}
+    </div>
+  );
+};
+
+const ImageSlider = ({
+  imageAfter,
+  imageBefore,
+}: {
+  imageBefore: string;
+  imageAfter: string;
+}) => {
   return (
     <ReactCompareImage
       leftImage={imageBefore}
