@@ -10,7 +10,6 @@ export const CategoryImagesGrid = ({
 }: {
   categoryItems: CategoryImagesItem[];
 }) => {
-  console.log("🚀 ~ categoryItems:", categoryItems);
   return (
     <>
       <div className="grid md:grid-cols-2 auto-rows-min gap-3 mt-8 md:mt-14">
