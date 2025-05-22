@@ -45,7 +45,7 @@ const CategoryImageItem = ({ item }: { item: CategoryImagesItem }) => {
             height={4500}
           />
           {item.imageAuthorText && (
-            <span className="mt-2 text-gray-500 text-xs">
+            <span className="mt-2 text-gray-500 hidden md:block">
               {item.imageAuthorText}
             </span>
           )}
@@ -66,6 +66,11 @@ const CategoryImageItem = ({ item }: { item: CategoryImagesItem }) => {
             width={4500}
             height={4500}
           />
+          {item.imageAuthorText && (
+            <span className="mt-2 text-gray-500 block md:hidden">
+              {item.imageAuthorText}
+            </span>
+          )}
         </div>
       </>
     );
@@ -80,9 +85,7 @@ const CategoryImageItem = ({ item }: { item: CategoryImagesItem }) => {
     >
       <ImageSlider imageBefore={imageBefore} imageAfter={imageAfter} />
       {item.imageAuthorText && (
-        <span className="mt-2 text-gray-500 text-xs">
-          {item.imageAuthorText}
-        </span>
+        <span className="mt-2 text-gray-500">{item.imageAuthorText}</span>
       )}
     </div>
   );
