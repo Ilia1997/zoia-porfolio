@@ -22,7 +22,7 @@ export default async function CategoryItemPage({ params }: PageProps) {
         <Header />
         <section className="sm:py-14 py-10">
           <Container>
-            <div>Category does not have any Items</div>;
+            <div>Category does not have any Items</div>
           </Container>
         </section>
 

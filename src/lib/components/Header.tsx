@@ -98,9 +98,9 @@ const Header = () => {
       </div>
 
       <div
-        className={`fixed top-0 right-0 z-20 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 z-20 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden
+    ${isMobileMenuOpen ? "translate-x-0 pointer-events-auto opacity-100" : "translate-x-full pointer-events-none opacity-0"}
+  `}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 mt-16">
           <Link href="/">
