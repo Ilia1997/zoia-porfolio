@@ -1,5 +1,5 @@
 import { client } from "@/sanity/client";
-import { CategoryImagesItem, CategoryItem } from "@/types";
+import { AnimationImageItem, CategoryImagesItem, CategoryItem } from "@/types";
 
 export const getCategories = async (): Promise<CategoryItem[]> => {
   const QUERY = `*[
@@ -37,4 +37,16 @@ export const getCategoryTitleBySlug = async ({
   const categoryResponse = await client.fetch(QUERY, {});
 
   return categoryResponse[0]?.title;
+};
+
+export const getLoopAnimationImages = async (): Promise<
+  AnimationImageItem[]
+> => {
+  const QUERY = `*[
+  _type == "animationImageItem"
+  && defined(slug.current)
+]|order(order asc)[0...12]{_id, publishedAt, image, order}`;
+  const images = await client.fetch<AnimationImageItem[]>(QUERY, {});
+
+  return images;
 };

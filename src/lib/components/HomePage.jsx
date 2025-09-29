@@ -9,7 +9,7 @@ import { Footer } from "@/lib/components/Footer";
 import HorizontalScrollLoop from "@/lib/components/HorizontalScrollLoop";
 import { motion } from "framer-motion";
 
-export function HomePage({ categories }) {
+export function HomePage({ categories, animationImages }) {
   const galleryRef = useRef(null);
 
   return (
@@ -42,7 +42,7 @@ export function HomePage({ categories }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <HorizontalScrollLoop />
+        <HorizontalScrollLoop animationImages={animationImages} />
       </motion.div>
       <MyWorks ref={galleryRef} categories={categories} />
       <Testimonials />

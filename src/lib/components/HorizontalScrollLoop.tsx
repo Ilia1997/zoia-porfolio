@@ -1,34 +1,26 @@
 "use client";
-
+import { urlFor } from "@/sanity/client";
+import { AnimationImageItem } from "@/types";
 import Image from "next/image";
 
-const Img_1 = "/loop-scroll-images/1.jpg";
-const Img_2 = "/loop-scroll-images/2.webp";
-const Img_3 = "/loop-scroll-images/3.jpg";
-const Img_4 = "/loop-scroll-images/4.webp";
-const Img_5 = "/loop-scroll-images/5.jpg";
-const Img_6 = "/loop-scroll-images/6.webp";
-
-const HorizontalScrollLoop = () => {
-  // Replace these URLs with your actual images
-  const images = [Img_1, Img_2, Img_4, Img_3, Img_5, Img_6];
-
+const HorizontalScrollLoop = ({
+  animationImages,
+}: {
+  animationImages: AnimationImageItem[];
+}) => {
   // Duplicate images for seamless looping
-  const duplicatedImages = [...images, ...images, ...images];
+  const duplicatedImages = [
+    ...animationImages,
+    ...animationImages,
+    ...animationImages,
+  ];
 
   return (
     <div className="overflow-hidden mt-6">
       <div className="flex flex-nowrap animate-infinite-scroll gap-0.5">
-        {duplicatedImages.map((src, index) => (
+        {duplicatedImages.map((item, index) => (
           <div key={index} className="flex-shrink-0">
-            <Image
-              src={src}
-              alt={`Image ${index}`}
-              className="w-[250px] h-[490px] object-cover"
-              width={250}
-              height={490}
-              priority
-            />
+            <ImageWrapper animationImage={item} />
           </div>
         ))}
       </div>
@@ -36,4 +28,27 @@ const HorizontalScrollLoop = () => {
   );
 };
 
+export const ImageWrapper = ({
+  animationImage,
+}: {
+  animationImage: AnimationImageItem;
+}) => {
+  const imageUrl = urlFor(animationImage.image).width(4500).url();
+
+  return (
+    <figure className="pointer-events-none">
+      <Image
+        placeholder="blur"
+        src={imageUrl}
+        blurDataURL={urlFor(animationImage.image).width(10).url()}
+        alt={`Image ${animationImage.order}`}
+        className={"w-[250px] h-[490px] object-cover"}
+        priority={true}
+        width={600}
+        height={600}
+        quality={95}
+      />
+    </figure>
+  );
+};
 export default HorizontalScrollLoop;

@@ -1,8 +1,11 @@
-import { getCategories } from "@/app/actions";
+import { getCategories, getLoopAnimationImages } from "@/app/actions";
 import { HomePage } from "@/lib/components/HomePage";
 
 export default async function HomeWrapper() {
-  const categories = await getCategories();
+  const [categories, animationImages] = await Promise.all([
+    getCategories(),
+    getLoopAnimationImages(),
+  ]);
 
-  return <HomePage categories={categories} />;
+  return <HomePage categories={categories} animationImages={animationImages} />;
 }
